@@ -14,14 +14,14 @@ const ProjectList = () => {
     useEffect(() => {
         dispatch(getListProjects())
     }, [dispatch])
-
+    console.log(projects)
     return (
         <div>
             <h1>Project List</h1>
             <hr />
             <Container>
                 <Row>
-                    {projects.map((project) => (
+                    {projects&&projects.map((project) => (
                         <Col xs={12} md={6} lg={4} key={project.id}>
                             <Card style={{ width: '18rem' }} className='m-3 pd-2'>
                                 <Card.Img variant="top" height='150px' src={project.thumbnail} />

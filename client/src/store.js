@@ -1,18 +1,19 @@
 import { thunk } from "redux-thunk";
-import { projectListReducer } from "./projectReducer/projectReducer";
+import { addProjectReducer, projectListReducer } from "./projectReducer/projectReducer";
 import { applyMiddleware, combineReducers, createStore } from "redux";
 
 
 
 const reducer = combineReducers({
-   projectLists: projectListReducer
+    projectLists: projectListReducer,
+    addProject: addProjectReducer
 })
 
-const middleware = [thunk]
+const middleware = applyMiddleware(thunk)
 
 const store = createStore(
-    reducer,
-    composeWithDevTools(applyMiddleware(...middleware))
+    reducer, middleware
+
 )
 
 export default store
