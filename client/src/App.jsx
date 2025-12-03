@@ -5,6 +5,7 @@ import './App.css'
 import ProjectList from './components/ProjectList'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AddProject from './components/AddProject'
+import DetailProject from './components/DetailProject'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<ProjectList />} />
           <Route path='/add-project' element={<AddProject />} />
+          <Route path='/detail-project/:id' element={<DetailProject />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,12 +1,13 @@
 import { thunk } from "redux-thunk";
-import { addProjectReducer, projectListReducer } from "./projectReducer/projectReducer";
+import { addProjectReducer, detailProjectReducer, projectListReducer } from "./projectReducer/projectReducer";
 import { applyMiddleware, combineReducers, createStore } from "redux";
 
 
 
 const reducer = combineReducers({
     projectLists: projectListReducer,
-    addProject: addProjectReducer
+    addProject: addProjectReducer,
+    detailProject: detailProjectReducer
 })
 
 const middleware = applyMiddleware(thunk)
